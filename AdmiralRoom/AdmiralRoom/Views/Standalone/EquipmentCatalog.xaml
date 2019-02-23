@@ -1,0 +1,183 @@
+﻿<Window x:Class="Huoyaoyuan.AdmiralRoom.Views.Standalone.EquipmentCatalog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:root="clr-namespace:Huoyaoyuan.AdmiralRoom"
+        xmlns:local="clr-namespace:Huoyaoyuan.AdmiralRoom.Views.Standalone"
+        xmlns:models="clr-namespace:Huoyaoyuan.AdmiralRoom.Models"
+        xmlns:ex="clr-namespace:Huoyaoyuan.AdmiralRoom.Views.Extensions"
+        Title="{ex:Localizable ViewTitle_EquipmentCatalog}"
+        Height="800"
+        d:DataContext="{d:DesignInstance models:EquipmentCatalogWorker}"
+        FontFamily="{Binding FontFamily, Source={x:Static root:Config.Current}, Mode=OneWay}"
+        FontSize="16"
+        mc:Ignorable="d">
+    <Grid>
+        <ListView ItemsSource="{Binding Groups}"
+                  VirtualizingPanel.IsVirtualizing="False"
+                  ScrollViewer.CanContentScroll="False"
+                  AlternationCount="2">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="{x:Type ListViewItem}" BasedOn="{StaticResource GridViewItemContainerStyleKey}">
+                    <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+                    <Setter Property="IsHitTestVisible" Value="False"/>
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="{ex:Localizable Equip_Name}" DisplayMemberBinding="{Binding Item.Name}"/>
+                    <GridViewColumn Header="">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Canvas Width="15" Height="15">
+                                    <Image Canvas.Left="-2.5" Canvas.Top="-2.5"
+                                           Width="20" Height="20"
+                                           Source="{Binding Item.Icon}"/>
+                                </Canvas>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Count}"/>
+                    <GridViewColumn Width="750">
+                        <GridViewColumn.Header>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" Width="52" Text="{ex:Localizable Equip_Improvement}"/>
+                                <TextBlock Grid.Column="1" Width="52" Text="{ex:Localizable Equip_Proficiency}"/>
+                                <TextBlock Grid.Column="2" Width="82" Text="{ex:Localizable Equip_CountLeft}"/>
+                                <TextBlock Grid.Column="3" Width="582" Text="{ex:Localizable Equip_OnShip}"/>
+                            </Grid>
+                        </GridViewColumn.Header>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <ItemsControl ItemsSource="{Binding Groups}">
+                                    <ItemsControl.ItemsPanel>
+                                        <ItemsPanelTemplate>
+                                            <StackPanel Orientation="Vertical"/>
+                                        </ItemsPanelTemplate>
+                                    </ItemsControl.ItemsPanel>
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <Border x:Name="border" BorderBrush="Gray" BorderThickness="0,1,0,0">
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"/>
+                                                        <ColumnDefinition Width="*"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock x:Name="level"
+                                                               Grid.Column="0"
+                                                               Width="53"
+                                                               VerticalAlignment="Center"
+                                                               Text="{Binding Level, StringFormat=★+{0}}"
+                                                               Foreground="DarkCyan"/>
+                                                    <ItemsControl Grid.Column="1" ItemsSource="{Binding Groups}">
+                                                        <ItemsControl.ItemsPanel>
+                                                            <ItemsPanelTemplate>
+                                                                <StackPanel Orientation="Vertical"/>
+                                                            </ItemsPanelTemplate>
+                                                        </ItemsControl.ItemsPanel>
+                                                        <ItemsControl.ItemTemplate>
+                                                            <DataTemplate>
+                                                                <Border x:Name="border"
+                                                                        BorderBrush="Gray" BorderThickness="0,1,0,0"
+                                                                        Padding="2">
+                                                                    <Grid>
+                                                                        <Grid.ColumnDefinitions>
+                                                                            <ColumnDefinition Width="Auto"/>
+                                                                            <ColumnDefinition Width="Auto"/>
+                                                                            <ColumnDefinition Width="*"/>
+                                                                        </Grid.ColumnDefinitions>
+                                                                        <TextBlock x:Name="proficiency"
+                                                                                   Grid.Column="0"
+                                                                                   Width="53"
+                                                                                   VerticalAlignment="Center"
+                                                                                   Text="{Binding Level, StringFormat=+{0}}"
+                                                                                   Foreground="LightGray"/>
+                                                                        <StackPanel Grid.Column="1"
+                                                                                    Width="83"
+                                                                                    VerticalAlignment="Center"
+                                                                                    Orientation="Horizontal">
+                                                                            <TextBlock Text="{Binding Count}"/>
+                                                                            <TextBlock Margin="2,0,0,0" Opacity="0.6" Text="{Binding Left, StringFormat=({0})}"/>
+                                                                        </StackPanel>
+                                                                        <ItemsControl Grid.Column="2" ItemsSource="{Binding Equipped}">
+                                                                            <ItemsControl.ItemsPanel>
+                                                                                <ItemsPanelTemplate>
+                                                                                    <WrapPanel Orientation="Horizontal"/>
+                                                                                </ItemsPanelTemplate>
+                                                                            </ItemsControl.ItemsPanel>
+                                                                            <ItemsControl.ItemTemplate>
+                                                                                <DataTemplate>
+                                                                                    <StackPanel Margin="0,0,5,0" Orientation="Horizontal">
+                                                                                        <TextBlock Text="{Binding Key}"/>
+                                                                                        <TextBlock x:Name="count" Text="{Binding Value, StringFormat=x{0}}" Opacity="0.6"/>
+                                                                                    </StackPanel>
+                                                                                    <DataTemplate.Triggers>
+                                                                                        <DataTrigger Binding="{Binding Value}" Value="1">
+                                                                                            <Setter TargetName="count" Property="Visibility" Value="Collapsed"/>
+                                                                                        </DataTrigger>
+                                                                                    </DataTemplate.Triggers>
+                                                                                </DataTemplate>
+                                                                            </ItemsControl.ItemTemplate>
+                                                                        </ItemsControl>
+                                                                    </Grid>
+                                                                </Border>
+                                                                <DataTemplate.Triggers>
+                                                                    <DataTrigger Binding="{Binding Level}" Value="7">
+                                                                        <Setter TargetName="proficiency" Property="Foreground" Value="DarkGoldenRod"/>
+                                                                    </DataTrigger>
+                                                                    <DataTrigger Binding="{Binding Level}" Value="6">
+                                                                        <Setter TargetName="proficiency" Property="Foreground" Value="#C0B8860B"/>
+                                                                    </DataTrigger>
+                                                                    <DataTrigger Binding="{Binding Level}" Value="5">
+                                                                        <Setter TargetName="proficiency" Property="Foreground" Value="#B0B8860B"/>
+                                                                    </DataTrigger>
+                                                                    <DataTrigger Binding="{Binding Level}" Value="4">
+                                                                        <Setter TargetName="proficiency" Property="Foreground" Value="#A0B8860B"/>
+                                                                    </DataTrigger>
+                                                                    <DataTrigger Binding="{Binding Level}" Value="3">
+                                                                        <Setter TargetName="proficiency" Property="Foreground" Value="#E000BFFF"/>
+                                                                    </DataTrigger>
+                                                                    <DataTrigger Binding="{Binding Level}" Value="2">
+                                                                        <Setter TargetName="proficiency" Property="Foreground" Value="#D000BFFF"/>
+                                                                    </DataTrigger>
+                                                                    <DataTrigger Binding="{Binding Level}" Value="1">
+                                                                        <Setter TargetName="proficiency" Property="Foreground" Value="#C000BFFF"/>
+                                                                    </DataTrigger>
+                                                                    <DataTrigger Binding="{Binding RelativeSource={RelativeSource PreviousData}}" Value="{x:Null}">
+                                                                        <Setter TargetName="border" Property="BorderThickness" Value="0"/>
+                                                                    </DataTrigger>
+                                                                </DataTemplate.Triggers>
+                                                            </DataTemplate>
+                                                        </ItemsControl.ItemTemplate>
+                                                    </ItemsControl>
+                                                </Grid>
+                                            </Border>
+                                            <DataTemplate.Triggers>
+                                                <DataTrigger Binding="{Binding Level}" Value="0">
+                                                    <Setter TargetName="level" Property="Foreground" Value="LightGray"/>
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding Level}" Value="10">
+                                                    <Setter TargetName="level" Property="Text" Value="★max"/>
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding RelativeSource={RelativeSource PreviousData}}" Value="{x:Null}">
+                                                    <Setter TargetName="border" Property="BorderThickness" Value="0"/>
+                                                </DataTrigger>
+                                            </DataTemplate.Triggers>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>

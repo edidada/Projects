@@ -1,0 +1,707 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{501AD96A-9AAE-4232-98E6-1ED41067C1FB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Huoyaoyuan.AdmiralRoom</RootNamespace>
+    <AssemblyName>AdmiralRoom</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetPlatformVersion>8.1</TargetPlatformVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <Prefer32Bit>false</Prefer32Bit>
+    <CodeAnalysisRuleSet>AdmiralRoom.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <Prefer32Bit>false</Prefer32Bit>
+    <CodeAnalysisRuleSet>AdmiralRoom.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icons\app.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="ControlzEx" Version="3.0.2.4" />
+    <PackageReference Include="Extended.Wpf.Toolkit" Version="3.1.0" />
+    <PackageReference Include="FiddlerCore" Version="4.6.2.0" />
+    <PackageReference Include="Meowtrix.UniversalClassLibrary" Version="1.3.2" />
+    <PackageReference Include="Meowtrix.WPF.Extend" Version="1.4.0" />
+    <PackageReference Include="Microsoft.WindowsAPICodePack-Shell" Version="1.1.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+    <PackageReference Include="System.ValueTuple" Version="4.4.0" />
+    <PackageReference Include="Xceed.Wpf.AvalonDock.Themes.VS2013" Version="2.9.0.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="CoreAudioApi, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\assemblies\CoreAudioApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Runtime.WindowsRuntime, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETCore\v4.5\System.Runtime.WindowsRuntime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Windows" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="API\APIData.cs" />
+    <Compile Include="API\APIHelper.cs" />
+    <Compile Include="API\api_ship.cs" />
+    <Compile Include="API\api_start2.cs" />
+    <Compile Include="API\getmember_basic.cs" />
+    <Compile Include="API\getmember_deck.cs" />
+    <Compile Include="API\getmember_kdock.cs" />
+    <Compile Include="API\getmember_material.cs" />
+    <Compile Include="API\getmember_ndock.cs" />
+    <Compile Include="API\getmember_questlist.cs" />
+    <Compile Include="API\getmember_record.cs" />
+    <Compile Include="API\getmember_require_info.cs" />
+    <Compile Include="API\getmember_ship2.cs" />
+    <Compile Include="API\getmember_ship_deck.cs" />
+    <Compile Include="API\getmember_slotitem.cs" />
+    <Compile Include="API\getmember_mapinfo.cs" />
+    <Compile Include="API\hokyu_charge.cs" />
+    <Compile Include="API\kaisou_powerup.cs" />
+    <Compile Include="API\kaisou_slot_deprive.cs" />
+    <Compile Include="API\kousyou_createitem.cs" />
+    <Compile Include="API\kousyou_destroyitem2.cs" />
+    <Compile Include="API\kousyou_destroyship.cs" />
+    <Compile Include="API\kousyou_remodel_slot.cs" />
+    <Compile Include="API\map_start_next.cs" />
+    <Compile Include="API\mission_result.cs" />
+    <Compile Include="API\port_port.cs" />
+    <Compile Include="API\ranking_getlist.cs" />
+    <Compile Include="API\req_getship.cs" />
+    <Compile Include="API\sortie_battle.old.cs" />
+    <Compile Include="API\sortie_battle.cs" />
+    <Compile Include="API\sortie_battleresult.cs" />
+    <Compile Include="API\svdata.cs" />
+    <Compile Include="Common\DelegateCommand.cs" />
+    <Compile Include="Common\CollectionEx.cs" />
+    <Compile Include="Common\DateTimeEx.cs" />
+    <Compile Include="Common\DispatcherHelper.cs" />
+    <Compile Include="Common\EnumParseHelper.cs" />
+    <Compile Include="Common\MemberwiseCopyHelper.cs" />
+    <Compile Include="Common\NotifySourceObject.cs" />
+    <Compile Include="Common\PresentationEx.cs" />
+    <Compile Include="Controls\ContentNullChooser.cs" />
+    <Compile Include="Controls\WinRankText.cs" />
+    <Compile Include="Logger\BattleDetail.old.cs" />
+    <Compile Include="Logger\BattleDetail.cs" />
+    <Compile Include="Logger\IBattleDetail.cs" />
+    <Compile Include="Models\ApiModel.cs" />
+    <Compile Include="Notifier\MessageBoxNotifierFactory.cs" />
+    <Compile Include="Notifier\NotifierFactory.cs" />
+    <Compile Include="Officer\Akashi\AkashiViewModel.cs" />
+    <Compile Include="Officer\Battle\InBattle.cs" />
+    <Compile Include="Officer\Battle\Old\Battle.cs" />
+    <Compile Include="Officer\Battle\Old\Stage.cs" />
+    <Compile Include="Officer\Battle\Stage.cs" />
+    <Compile Include="Officer\General\IdentifiableEqualityComparer.cs" />
+    <Compile Include="Officer\RankingViewModel.cs" />
+    <Compile Include="Officer\RawApi.cs" />
+    <Compile Include="Properties\VersionInfo.cs" />
+    <Compile Include="Composition\IModuleMetadata.cs" />
+    <Compile Include="Composition\ISubView.cs" />
+    <Compile Include="Composition\ISubWindow.cs" />
+    <Compile Include="Composition\ModuleHost.cs" />
+    <Compile Include="Composition\ModuleInfo.cs" />
+    <Compile Include="Config.cs" />
+    <Compile Include="ConfigWindow.xaml.cs">
+      <DependentUpon>ConfigWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ConstData.cs" />
+    <Compile Include="Controls\ExpBar.cs" />
+    <Compile Include="Controls\PredicateProgressBar.cs" />
+    <Compile Include="KanColleBrowser.xaml.cs">
+      <DependentUpon>KanColleBrowser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Localization\StringTable.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StringTable.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Logger\BattleDetailLogger.cs" />
+    <Compile Include="Logger\BattleDropLog.cs" />
+    <Compile Include="Logger\CreateItemLog.cs" />
+    <Compile Include="Logger\CreateShipLog.cs" />
+    <Compile Include="Logger\CsvLogger.cs" />
+    <Compile Include="Logger\DiffNumber.cs" />
+    <Compile Include="Logger\ILog.cs" />
+    <Compile Include="Logger\Logger.cs" />
+    <Compile Include="Logger\Loggers.cs" />
+    <Compile Include="Logger\MaterialLog.cs" />
+    <Compile Include="Logger\MissionLog.cs" />
+    <Compile Include="Logger\PropertyProvider.cs" />
+    <Compile Include="Logger\ViewProvider.cs" />
+    <Compile Include="Logger\ViewProviderBase.cs" />
+    <Compile Include="Models\BattleCatalogWorker.cs" />
+    <Compile Include="Models\EquipmentCatalogWorker.cs" />
+    <Compile Include="NewWindow.xaml.cs">
+      <DependentUpon>NewWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Officer\Exp.cs" />
+    <Compile Include="Models\ItemWithIndex.cs" />
+    <Compile Include="Models\ShipCatalogWorker.cs" />
+    <Compile Include="Common\MultiComparer.cs" />
+    <Compile Include="Models\Status.cs" />
+    <Compile Include="Models\Volume.cs" />
+    <Compile Include="Notifier\BallonNotifierFactory.cs" />
+    <Compile Include="Notifier\NotifierFactories.cs" />
+    <Compile Include="Notifier\ToastNotifierFactory.cs" />
+    <Compile Include="Notifier\ShellHelpers.cs" />
+    <Compile Include="Officer\Admiral.cs" />
+    <Compile Include="Officer\Battle\BattleBase.cs" />
+    <Compile Include="Officer\Battle\BattleManager.cs" />
+    <Compile Include="Officer\Battle\Battle.cs" />
+    <Compile Include="Officer\BuildingDock.cs" />
+    <Compile Include="Officer\ConditionHelper.cs" />
+    <Compile Include="Officer\CounterBase.cs" />
+    <Compile Include="Officer\Counters.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Counters.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Officer\DevelopmentInfo.cs" />
+    <Compile Include="Officer\EquipInfo.cs" />
+    <Compile Include="Officer\Equipment.cs" />
+    <Compile Include="Officer\EquipType.cs" />
+    <Compile Include="Officer\Fleet.cs" />
+    <Compile Include="Officer\General\GameObject.cs" />
+    <Compile Include="Common\IUpdatable.cs" />
+    <Compile Include="Officer\Homeport.cs" />
+    <Compile Include="Officer\General\IDTable.cs" />
+    <Compile Include="Officer\General\LimitedValue.cs" />
+    <Compile Include="Officer\General\ICounter.cs" />
+    <Compile Include="Officer\KnownQuests.cs" />
+    <Compile Include="Officer\MapArea.cs" />
+    <Compile Include="Officer\MapInfo.cs" />
+    <Compile Include="Officer\MapNode.cs" />
+    <Compile Include="Officer\MasterData.cs" />
+    <Compile Include="Officer\Material.cs" />
+    <Compile Include="Officer\General\Modernizable.cs" />
+    <Compile Include="Officer\MissionInfo.cs" />
+    <Compile Include="Officer\QuestInfo.cs" />
+    <Compile Include="Officer\Proxy.cs" />
+    <Compile Include="Officer\Quest.cs" />
+    <Compile Include="Officer\QuestManager.cs" />
+    <Compile Include="Officer\QuestTarget.cs" />
+    <Compile Include="Officer\RepairDock.cs" />
+    <Compile Include="Officer\Shipyard.cs" />
+    <Compile Include="Officer\Ship.cs" />
+    <Compile Include="Officer\ShipInfo.cs" />
+    <Compile Include="Officer\ShipType.cs" />
+    <Compile Include="Officer\Slot.cs" />
+    <Compile Include="Officer\Staff.cs" />
+    <Compile Include="Officer\StaticCounters.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StaticCounters.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Officer\UseItem.cs" />
+    <Compile Include="Reporter\KancolleDBReporter.cs" />
+    <Compile Include="Reporter\PoiDBReporter.cs" />
+    <Compile Include="Updater\Updater.cs" />
+    <Compile Include="AboutWindow.xaml.cs">
+      <DependentUpon>AboutWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdmiralView.xaml.cs">
+      <DependentUpon>AdmiralView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Standalone\AkashiWindow.xaml.cs">
+      <DependentUpon>AkashiWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BattleView.xaml.cs">
+      <DependentUpon>BattleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BuildingView.xaml.cs">
+      <DependentUpon>BuildingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CompassView.xaml.cs">
+      <DependentUpon>CompassView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Converter\CondColorConverter.cs" />
+    <Compile Include="Views\Converter\DateTimeOffsetConverter.cs" />
+    <Compile Include="Views\Converter\EnumVisibilityConverter.cs" />
+    <Compile Include="Views\Converter\JsonConverter.cs" />
+    <Compile Include="Views\Converter\LVColorConverter.cs" />
+    <Compile Include="Views\Converter\NullToVisibilityConverter.cs" />
+    <Compile Include="Views\Converter\RadioButtonConverter.cs" />
+    <Compile Include="Views\Converter\StringTableConverter.cs" />
+    <Compile Include="Views\Converter\VisibilityConverter.cs" />
+    <Compile Include="Views\DevelopView.xaml.cs">
+      <DependentUpon>DevelopView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Extensions\IntExtension.cs" />
+    <Compile Include="Views\Extensions\LocalizableExtension.cs" />
+    <Compile Include="Views\Extensions\Localizable2Extension.cs" />
+    <Compile Include="Views\FleetView.xaml.cs">
+      <DependentUpon>FleetView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MapHPView.xaml.cs">
+      <DependentUpon>MapHPView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MissionView.xaml.cs">
+      <DependentUpon>MissionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\QuestOverview.xaml.cs">
+      <DependentUpon>QuestOverview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RankingView.xaml.cs">
+      <DependentUpon>RankingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RawApiView.xaml.cs">
+      <DependentUpon>RawApiView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RepairView.xaml.cs">
+      <DependentUpon>RepairView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Settings.xaml.cs">
+      <DependentUpon>Settings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Standalone\BattleCatalog.xaml.cs">
+      <DependentUpon>BattleCatalog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Standalone\BattleDetailView.xaml.cs">
+      <DependentUpon>BattleDetailView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Standalone\BattleDropLogViewWindow.cs" />
+    <Compile Include="Views\Standalone\EquipmentCatalog.xaml.cs">
+      <DependentUpon>EquipmentCatalog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Standalone\LoggerExports.cs" />
+    <Compile Include="Views\Standalone\LogView.xaml.cs">
+      <DependentUpon>LogView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Standalone\MasterDataWindow.xaml.cs">
+      <DependentUpon>MasterDataWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Standalone\MaterialCatalog.xaml.cs">
+      <DependentUpon>MaterialCatalog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Logger\MaterialProvider.cs" />
+    <Compile Include="Views\Standalone\MaterialChart.cs" />
+    <Compile Include="Views\Standalone\ShipCatalog.xaml.cs">
+      <DependentUpon>ShipCatalog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Win32\IServiceProvider.cs" />
+    <Compile Include="Win32\IViewObject.cs" />
+    <Compile Include="Win32\Win32Helper.cs" />
+    <Compile Include="Win32\WinInetHelper.cs" />
+    <Page Include="ConfigWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Icons\VectorIcons.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="KanColleBrowser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Localization\ResourceService.cs" />
+    <Compile Include="Resources\ThemeService.cs" />
+    <Page Include="Localization\en\StringTable.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StringTable.tt</DependentUpon>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Localization\ja\StringTable.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StringTable.tt</DependentUpon>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Localization\zh-Hans\StringTable.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StringTable.tt</DependentUpon>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="NewWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Officer\Akashi\AkashiData.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <DependentUpon>AkashiData.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Designer</SubType>
+      <DesignTime>True</DesignTime>
+    </Page>
+    <Page Include="Resources\DefaultTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\TransparentTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\StaticResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AboutWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AdmiralView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Standalone\AkashiWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\BattleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BuildingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CompassView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DevelopView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FleetView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MapHPView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MissionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\QuestOverview.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RankingView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\RawApiView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\RepairView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Settings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Standalone\BattleCatalog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Standalone\BattleDetailView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Standalone\EquipmentCatalog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Standalone\LogView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Standalone\MasterDataWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Standalone\MaterialCatalog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Standalone\ShipCatalog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Localization\StringTable.en.resx">
+      <DependentUpon>StringTable.zh-Hans.resx</DependentUpon>
+    </None>
+    <None Include="Localization\StringTable.ja.resx">
+      <DependentUpon>StringTable.zh-Hans.resx</DependentUpon>
+    </None>
+    <None Include="Localization\StringTable.zh-Hans.resx" />
+    <None Include="AdmiralRoom.ruleset" />
+    <None Include="app.manifest">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="information\masterdata.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Localization\resx2xaml.ttinclude" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Material\FurnitureCoin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Material\1.png" />
+    <Resource Include="Images\Material\2.png" />
+    <Resource Include="Images\Material\3.png" />
+    <Resource Include="Images\Material\4.png" />
+    <Resource Include="Images\Material\5.png" />
+    <Resource Include="Images\Material\6.png" />
+    <Resource Include="Images\Material\7.png" />
+    <Resource Include="Images\Material\8.png" />
+    <Resource Include="Images\Material\10.png" />
+    <Resource Include="Images\Material\11.png" />
+    <Resource Include="Images\Material\12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Quest\progress50.png" />
+    <Resource Include="Images\Quest\progress80.png" />
+    <Resource Include="Images\Quest\complete.png" />
+    <Resource Include="Images\Quest\1.png" />
+    <Resource Include="Images\Quest\2.png" />
+    <Resource Include="Images\Quest\3.png" />
+    <Resource Include="Images\Quest\4.png" />
+    <Resource Include="Images\Quest\5.png" />
+    <Resource Include="Images\Quest\6.png" />
+    <Resource Include="Images\Quest\7.png" />
+    <Resource Include="Images\Quest\8.png" />
+    <Resource Include="Images\Quest\9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\AirProficiency\1.png" />
+    <Resource Include="Images\AirProficiency\2.png" />
+    <Resource Include="Images\AirProficiency\3.png" />
+    <Resource Include="Images\AirProficiency\4.png" />
+    <Resource Include="Images\AirProficiency\5.png" />
+    <Resource Include="Images\AirProficiency\6.png" />
+    <Resource Include="Images\AirProficiency\7.png" />
+    <Resource Include="Images\Equip\38.png" />
+    <Resource Include="Images\AdmiralRoom.png" />
+    <Resource Include="Images\Equip\39.png" />
+    <Resource Include="Images\Equip\40.png" />
+    <Resource Include="Images\Equip\41.png" />
+    <Resource Include="Images\Equip\42.png" />
+    <Resource Include="Images\Equip\43.png" />
+    <Resource Include="Images\Equip\44.png" />
+    <Resource Include="Images\Equip\45.png" />
+    <Resource Include="Images\Equip\46.png" />
+    <Resource Include="Images\Equip\47.png" />
+    <Content Include="Localization\en\StringTable.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>StringTable.xaml</LastGenOutput>
+    </Content>
+    <Content Include="Localization\ja\StringTable.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>StringTable.xaml</LastGenOutput>
+    </Content>
+    <Content Include="Localization\StringTable.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>StringTable.cs</LastGenOutput>
+    </Content>
+    <Content Include="Localization\zh-Hans\StringTable.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>StringTable.xaml</LastGenOutput>
+    </Content>
+    <Resource Include="Officer\Akashi\AkashiData.txt" />
+    <Content Include="Officer\Akashi\AkashiData.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>AkashiData.xaml</LastGenOutput>
+    </Content>
+    <Content Include="Officer\StaticCounters.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>StaticCounters.cs</LastGenOutput>
+    </Content>
+    <Resource Include="Icons\app.ico" />
+    <Content Include="Officer\Counters.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Counters.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Equip\1.png" />
+    <Resource Include="Images\Equip\2.png" />
+    <Resource Include="Images\Equip\3.png" />
+    <Resource Include="Images\Equip\4.png" />
+    <Resource Include="Images\Equip\5.png" />
+    <Resource Include="Images\Equip\6.png" />
+    <Resource Include="Images\Equip\7.png" />
+    <Resource Include="Images\Equip\8.png" />
+    <Resource Include="Images\Equip\9.png" />
+    <Resource Include="Images\Equip\10.png" />
+    <Resource Include="Images\Equip\11.png" />
+    <Resource Include="Images\Equip\12.png" />
+    <Resource Include="Images\Equip\13.png" />
+    <Resource Include="Images\Equip\14.png" />
+    <Resource Include="Images\Equip\15.png" />
+    <Resource Include="Images\Equip\16.png" />
+    <Resource Include="Images\Equip\17.png" />
+    <Resource Include="Images\Equip\18.png" />
+    <Resource Include="Images\Equip\19.png" />
+    <Resource Include="Images\Equip\20.png" />
+    <Resource Include="Images\Equip\21.png" />
+    <Resource Include="Images\Equip\22.png" />
+    <Resource Include="Images\Equip\23.png" />
+    <Resource Include="Images\Equip\24.png" />
+    <Resource Include="Images\Equip\25.png" />
+    <Resource Include="Images\Equip\26.png" />
+    <Resource Include="Images\Equip\27.png" />
+    <Resource Include="Images\Equip\28.png" />
+    <Resource Include="Images\Equip\29.png" />
+    <Resource Include="Images\Equip\30.png" />
+    <Resource Include="Images\Equip\31.png" />
+    <Resource Include="Images\Equip\32.png" />
+    <Resource Include="Images\Equip\33.png" />
+    <Resource Include="Images\Equip\34.png" />
+    <Resource Include="Images\Equip\35.png" />
+    <Resource Include="Images\Equip\36.png" />
+    <Resource Include="Images\Equip\37.png" />
+    <Resource Include="Images\Equip\Misc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="SHDocVw">
+      <Guid>{EAB22AC0-30C1-11CF-A7EB-0000C05BAE0B}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

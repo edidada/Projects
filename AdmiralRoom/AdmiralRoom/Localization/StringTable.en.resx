@@ -1,0 +1,1162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="BackToGame" xml:space="preserve">
+    <value>Back to game</value>
+  </data>
+  <data name="Battle_AnonymousDamage" xml:space="preserve">
+    <value>Anonymous Damage:</value>
+  </data>
+  <data name="Battle_Drop" xml:space="preserve">
+    <value>Drop: </value>
+  </data>
+  <data name="Battle_WinRank_A" xml:space="preserve">
+    <value>Victory A</value>
+  </data>
+  <data name="Battle_WinRank_B" xml:space="preserve">
+    <value>Tactical Victory B</value>
+  </data>
+  <data name="Battle_WinRank_C" xml:space="preserve">
+    <value>Tactical Defeat C</value>
+  </data>
+  <data name="Battle_WinRank_D" xml:space="preserve">
+    <value>Defeat D</value>
+  </data>
+  <data name="Battle_WinRank_E" xml:space="preserve">
+    <value>Total Defeat E</value>
+  </data>
+  <data name="Battle_WinRank_Perfect" xml:space="preserve">
+    <value>Perfect S</value>
+  </data>
+  <data name="Battle_WinRank_S" xml:space="preserve">
+    <value>Victory S</value>
+  </data>
+  <data name="BattleDetail_AA" xml:space="preserve">
+    <value>Anti air cut-in: </value>
+  </data>
+  <data name="BattleDetail_AA_Type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="BattleDetail_FlareShip" xml:space="preserve">
+    <value>Flare from: </value>
+  </data>
+  <data name="BattleDetail_LightShip" xml:space="preserve">
+    <value>Spotlight equipped: </value>
+  </data>
+  <data name="BattleDetail_NightTouch" xml:space="preserve">
+    <value>Night touching: </value>
+  </data>
+  <data name="BattleDetail_Searching_1" xml:space="preserve">
+    <value>Searching success</value>
+  </data>
+  <data name="BattleDetail_Searching_2" xml:space="preserve">
+    <value>Searching success (plane lost)</value>
+  </data>
+  <data name="BattleDetail_Searching_3" xml:space="preserve">
+    <value>Searching plane lost</value>
+  </data>
+  <data name="BattleDetail_Searching_4" xml:space="preserve">
+    <value>Searching failed</value>
+  </data>
+  <data name="BattleDetail_Searching_5" xml:space="preserve">
+    <value>Searching success (without plane)</value>
+  </data>
+  <data name="BattleDetail_Searching_6" xml:space="preserve">
+    <value>Searching failed (without plane)</value>
+  </data>
+  <data name="BattleDetail_Stage_Aerial" xml:space="preserve">
+    <value>Aerial Combat</value>
+  </data>
+  <data name="BattleDetail_Stage_AirBase" xml:space="preserve">
+    <value>Land-base airplane</value>
+  </data>
+  <data name="BattleDetail_Stage_AirBaseJet" xml:space="preserve">
+    <value>Land-base jet plane</value>
+  </data>
+  <data name="BattleDetail_Stage_Fire1" xml:space="preserve">
+    <value>Fire stage 1</value>
+  </data>
+  <data name="BattleDetail_Stage_Fire2" xml:space="preserve">
+    <value>Fire stage 2</value>
+  </data>
+  <data name="BattleDetail_Stage_Fire3" xml:space="preserve">
+    <value>Fire stage 3</value>
+  </data>
+  <data name="BattleDetail_Stage_FriendNight" xml:space="preserve">
+    <value>Friend fleet night battle</value>
+  </data>
+  <data name="BattleDetail_Stage_Jet" xml:space="preserve">
+    <value>Jet plane attack</value>
+  </data>
+  <data name="BattleDetail_Stage_Night" xml:space="preserve">
+    <value>Night battle</value>
+  </data>
+  <data name="BattleDetail_Stage_NightToDay1" xml:space="preserve">
+    <value>Combined night stage 1</value>
+  </data>
+  <data name="BattleDetail_Stage_NightToDay2" xml:space="preserve">
+    <value>Combined night stage 2</value>
+  </data>
+  <data name="BattleDetail_Stage_OpeningASW" xml:space="preserve">
+    <value>Opening anti-submarine</value>
+  </data>
+  <data name="BattleDetail_Stage_OpeningTorpedo" xml:space="preserve">
+    <value>Opening torpedo</value>
+  </data>
+  <data name="BattleDetail_Stage_Support" xml:space="preserve">
+    <value>Support fleet</value>
+  </data>
+  <data name="BattleDetail_Stage_Torpedo" xml:space="preserve">
+    <value>Torpedo attack</value>
+  </data>
+  <data name="BattleDetail_Support_Aerial" xml:space="preserve">
+    <value>Aerial support</value>
+  </data>
+  <data name="BattleDetail_Support_Fire" xml:space="preserve">
+    <value>Fire support</value>
+  </data>
+  <data name="BattleDetail_Support_Torpedo" xml:space="preserve">
+    <value>Torpedo support</value>
+  </data>
+  <data name="BattleDetail_Touching" xml:space="preserve">
+    <value>Touching: </value>
+  </data>
+  <data name="Browser" xml:space="preserve">
+    <value>Browser</value>
+  </data>
+  <data name="Browser_DefaultPage" xml:space="preserve">
+    <value>Game page</value>
+  </data>
+  <data name="Browser_DefaultPage_Override" xml:space="preserve">
+    <value>Custom</value>
+  </data>
+  <data name="Browser_LockFlash" xml:space="preserve">
+    <value>Lock Flash</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="ChartTimeRange_All" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="ChartTimeRange_Days1" xml:space="preserve">
+    <value>1 Day</value>
+  </data>
+  <data name="ChartTimeRange_Months1" xml:space="preserve">
+    <value>1 Month</value>
+  </data>
+  <data name="ChartTimeRange_Months2" xml:space="preserve">
+    <value>2 Months</value>
+  </data>
+  <data name="ChartTimeRange_Months3" xml:space="preserve">
+    <value>3 Months</value>
+  </data>
+  <data name="ChartTimeRange_Months6" xml:space="preserve">
+    <value>Half Year</value>
+  </data>
+  <data name="ChartTimeRange_Weeks1" xml:space="preserve">
+    <value>1 Week</value>
+  </data>
+  <data name="ChartTimeRange_Weeks2" xml:space="preserve">
+    <value>2 Weeks</value>
+  </data>
+  <data name="ChartTimeRange_Years1" xml:space="preserve">
+    <value>1 Year</value>
+  </data>
+  <data name="CleanCache" xml:space="preserve">
+    <value>Clean cache</value>
+  </data>
+  <data name="CleanCache_Alert" xml:space="preserve">
+    <value>Are you sure to delete internet cache files?</value>
+  </data>
+  <data name="CleanCache_Fail" xml:space="preserve">
+    <value>Internet cache files delete failed.</value>
+  </data>
+  <data name="CleanCache_Success" xml:space="preserve">
+    <value>Internet cache files have been deleted.</value>
+  </data>
+  <data name="Clear" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="Compass_AirBattle" xml:space="preserve">
+    <value>Aerial Battle</value>
+  </data>
+  <data name="Compass_AirDefence" xml:space="preserve">
+    <value>Long Distance Air Defence</value>
+  </data>
+  <data name="Compass_AirSearch" xml:space="preserve">
+    <value>Aerial Search</value>
+  </data>
+  <data name="Compass_Battle" xml:space="preserve">
+    <value>Battle</value>
+  </data>
+  <data name="Compass_BOSS" xml:space="preserve">
+    <value>BOSS</value>
+  </data>
+  <data name="Compass_Combined" xml:space="preserve">
+    <value>Combined Fleet</value>
+  </data>
+  <data name="Compass_CombinedBOSS" xml:space="preserve">
+    <value>Combined Fleet BOSS</value>
+  </data>
+  <data name="Compass_Guard" xml:space="preserve">
+    <value>Transport Finish</value>
+  </data>
+  <data name="Compass_Imagination" xml:space="preserve">
+    <value>Imagination</value>
+  </data>
+  <data name="Compass_ItemGet" xml:space="preserve">
+    <value>Item Get</value>
+  </data>
+  <data name="Compass_ItemLost" xml:space="preserve">
+    <value>Item Lost</value>
+  </data>
+  <data name="Compass_NightBattle" xml:space="preserve">
+    <value>Night Battle</value>
+  </data>
+  <data name="Compass_Position" xml:space="preserve">
+    <value>Position: </value>
+  </data>
+  <data name="Compass_SelectRoute" xml:space="preserve">
+    <value>Select Route</value>
+  </data>
+  <data name="Compass_SortieArea" xml:space="preserve">
+    <value>Sortie Area: </value>
+  </data>
+  <data name="Compass_Transport" xml:space="preserve">
+    <value>Landing Point</value>
+  </data>
+  <data name="Database_Report" xml:space="preserve">
+    <value>Reporting to database</value>
+  </data>
+  <data name="Dock_Complete" xml:space="preserve">
+    <value>Complete</value>
+  </data>
+  <data name="Dock_Empty" xml:space="preserve">
+    <value>Empty</value>
+  </data>
+  <data name="Dock_Locked" xml:space="preserve">
+    <value>Locked</value>
+  </data>
+  <data name="Dock_ShowBuild" xml:space="preserve">
+    <value>Show ship name in building</value>
+  </data>
+  <data name="Empty" xml:space="preserve">
+    <value>Empty</value>
+  </data>
+  <data name="Equip_CountLeft" xml:space="preserve">
+    <value>Count(Left)</value>
+  </data>
+  <data name="Equip_Improvement" xml:space="preserve">
+    <value>Improvement</value>
+  </data>
+  <data name="Equip_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Equip_OnShip" xml:space="preserve">
+    <value>Equipped on</value>
+  </data>
+  <data name="Equip_Proficiency" xml:space="preserve">
+    <value>Proficiency</value>
+  </data>
+  <data name="ExitConfirm" xml:space="preserve">
+    <value>Exit Confirm</value>
+  </data>
+  <data name="ExitConfirm_Confirm" xml:space="preserve">
+    <value>Are you sure to exit?</value>
+  </data>
+  <data name="ExitConfirm_MissionComplete" xml:space="preserve">
+    <value>Expedition is going to complete, </value>
+  </data>
+  <data name="ExitConfirm_MissionStart" xml:space="preserve">
+    <value>A fleet can start an expedition, </value>
+  </data>
+  <data name="ExitConfirm_Quest" xml:space="preserve">
+    <value>Quests completed? </value>
+  </data>
+  <data name="ExitConfirm_Repair" xml:space="preserve">
+    <value>Ship not repaired, </value>
+  </data>
+  <data name="Expedition" xml:space="preserve">
+    <value>Expedition</value>
+  </data>
+  <data name="Expedition_BackTime" xml:space="preserve">
+    <value>Back Time</value>
+  </data>
+  <data name="Expedition_Fail" xml:space="preserve">
+    <value>Fail</value>
+  </data>
+  <data name="Expedition_Great" xml:space="preserve">
+    <value>Great Success</value>
+  </data>
+  <data name="Expedition_Remain" xml:space="preserve">
+    <value>Remain</value>
+  </data>
+  <data name="Expedition_Success" xml:space="preserve">
+    <value>Success</value>
+  </data>
+  <data name="Fail" xml:space="preserve">
+    <value>Fail</value>
+  </data>
+  <data name="Fleet_AFP" xml:space="preserve">
+    <value>Air Fight Power</value>
+  </data>
+  <data name="Fleet_AFP_Basic" xml:space="preserve">
+    <value>Basic</value>
+  </data>
+  <data name="Fleet_AFP_Bonus" xml:space="preserve">
+    <value>Bonus</value>
+  </data>
+  <data name="Fleet_AFP_Fighter" xml:space="preserve">
+    <value>Fighters Only</value>
+  </data>
+  <data name="Fleet_ChargeCost" xml:space="preserve">
+    <value>Charge Cost</value>
+  </data>
+  <data name="Fleet_Condition" xml:space="preserve">
+    <value>Condition Recovery</value>
+  </data>
+  <data name="Fleet_Escaped" xml:space="preserve">
+    <value>Escaped</value>
+  </data>
+  <data name="Fleet_HomeportRepair" xml:space="preserve">
+    <value>Homeport Repair</value>
+  </data>
+  <data name="Fleet_Level_Average" xml:space="preserve">
+    <value>Average Level</value>
+  </data>
+  <data name="Fleet_Level_Sum" xml:space="preserve">
+    <value>Level Sum</value>
+  </data>
+  <data name="Fleet_LoS" xml:space="preserve">
+    <value>Light of Sight</value>
+  </data>
+  <data name="Fleet_RepairCost" xml:space="preserve">
+    <value>Repair Cost</value>
+  </data>
+  <data name="Fleet_Repairing" xml:space="preserve">
+    <value>Repairing</value>
+  </data>
+  <data name="Fleet_Speed_High" xml:space="preserve">
+    <value>High Speed</value>
+  </data>
+  <data name="Fleet_Speed_Low" xml:space="preserve">
+    <value>Low Speed</value>
+  </data>
+  <data name="Fleet_Status_Akashi" xml:space="preserve">
+    <value>Homeport Repairing</value>
+  </data>
+  <data name="Fleet_Status_Empty" xml:space="preserve">
+    <value>Fleet is empty.</value>
+  </data>
+  <data name="Fleet_Status_HeavilyDamaged" xml:space="preserve">
+    <value>Ship is heavily damaged.</value>
+  </data>
+  <data name="Fleet_Status_InMission" xml:space="preserve">
+    <value>In expedition</value>
+  </data>
+  <data name="Fleet_Status_InSortie" xml:space="preserve">
+    <value>In sortie</value>
+  </data>
+  <data name="Fleet_Status_LowCondition" xml:space="preserve">
+    <value>Condition recoverying</value>
+  </data>
+  <data name="Fleet_Status_NeedCharge" xml:space="preserve">
+    <value>Charge needed.</value>
+  </data>
+  <data name="Fleet_Status_Ready" xml:space="preserve">
+    <value>Ready for sortie.</value>
+  </data>
+  <data name="Fleet_Status_Repairing" xml:space="preserve">
+    <value>Ship is repairing</value>
+  </data>
+  <data name="Font" xml:space="preserve">
+    <value>Font</value>
+  </data>
+  <data name="Forward" xml:space="preserve">
+    <value>Forward</value>
+  </data>
+  <data name="Goto" xml:space="preserve">
+    <value>Goto</value>
+  </data>
+  <data name="ItemCount" xml:space="preserve">
+    <value>Equips: </value>
+  </data>
+  <data name="Log_ShipFull" xml:space="preserve">
+    <value>※Full of ships</value>
+  </data>
+  <data name="Logger_CreateItem" xml:space="preserve">
+    <value>Create Item</value>
+  </data>
+  <data name="Logger_CreateShip" xml:space="preserve">
+    <value>Construction</value>
+  </data>
+  <data name="Logger_Drop" xml:space="preserve">
+    <value>Drop (battle detail)</value>
+  </data>
+  <data name="Logs" xml:space="preserve">
+    <value>Logs</value>
+  </data>
+  <data name="LogTitle_AdmiralLevel" xml:space="preserve">
+    <value>Admiral Level</value>
+  </data>
+  <data name="LogTitle_BOSS" xml:space="preserve">
+    <value>BOSS</value>
+  </data>
+  <data name="LogTitle_BuildingType" xml:space="preserve">
+    <value>Construction Type</value>
+  </data>
+  <data name="LogTitle_Date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="LogTitle_DateTime" xml:space="preserve">
+    <value>DateTime</value>
+  </data>
+  <data name="LogTitle_DropItem" xml:space="preserve">
+    <value>Drop Item</value>
+  </data>
+  <data name="LogTitle_DropShipName" xml:space="preserve">
+    <value>Drop Ship</value>
+  </data>
+  <data name="LogTitle_EmptyDocks" xml:space="preserve">
+    <value>Empty Docks</value>
+  </data>
+  <data name="LogTitle_EnemyFleetName" xml:space="preserve">
+    <value>Enemy Fleet Name</value>
+  </data>
+  <data name="LogTitle_EquipmentCreated" xml:space="preserve">
+    <value>Equipment Created</value>
+  </data>
+  <data name="LogTitle_EquipmentType" xml:space="preserve">
+    <value>Equipment Type</value>
+  </data>
+  <data name="LogTitle_Item1" xml:space="preserve">
+    <value>Fuel</value>
+  </data>
+  <data name="LogTitle_Item2" xml:space="preserve">
+    <value>Bull</value>
+  </data>
+  <data name="LogTitle_Item3" xml:space="preserve">
+    <value>Steel</value>
+  </data>
+  <data name="LogTitle_Item4" xml:space="preserve">
+    <value>Bauxite</value>
+  </data>
+  <data name="LogTitle_Item5" xml:space="preserve">
+    <value>Development Material</value>
+  </data>
+  <data name="LogTitle_MapArea" xml:space="preserve">
+    <value>Map Area</value>
+  </data>
+  <data name="LogTitle_MapAreaName" xml:space="preserve">
+    <value>Map Name</value>
+  </data>
+  <data name="LogTitle_MapCell" xml:space="preserve">
+    <value>Map Cell</value>
+  </data>
+  <data name="LogTitle_MissionName" xml:space="preserve">
+    <value>Mission Name</value>
+  </data>
+  <data name="LogTitle_Result" xml:space="preserve">
+    <value>Result</value>
+  </data>
+  <data name="LogTitle_Secretary" xml:space="preserve">
+    <value>Secretary</value>
+  </data>
+  <data name="LogTitle_SecretaryName" xml:space="preserve">
+    <value>Secretary</value>
+  </data>
+  <data name="LogTitle_ShipCreated" xml:space="preserve">
+    <value>Ship Created</value>
+  </data>
+  <data name="LogTitle_ShipType" xml:space="preserve">
+    <value>ShipType</value>
+  </data>
+  <data name="LogTitle_Success" xml:space="preserve">
+    <value>Success</value>
+  </data>
+  <data name="LogTitle_UseItem1" xml:space="preserve">
+    <value>Item 1</value>
+  </data>
+  <data name="LogTitle_UseItem2" xml:space="preserve">
+    <value>Item 2</value>
+  </data>
+  <data name="LogTitle_UseItemCount" xml:space="preserve">
+    <value>Count</value>
+  </data>
+  <data name="LogTitle_WinRank" xml:space="preserve">
+    <value>Win Rank</value>
+  </data>
+  <data name="LSC_No" xml:space="preserve">
+    <value>NSC</value>
+  </data>
+  <data name="LSC_Yes" xml:space="preserve">
+    <value>LSC</value>
+  </data>
+  <data name="MainMenu_Information" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="MainMenu_Overview" xml:space="preserve">
+    <value>Overview</value>
+  </data>
+  <data name="MainMenu_Statistics" xml:space="preserve">
+    <value>Statistics</value>
+  </data>
+  <data name="MainMenu_Views" xml:space="preserve">
+    <value>Views</value>
+  </data>
+  <data name="Material" xml:space="preserve">
+    <value>Material</value>
+  </data>
+  <data name="Material_1" xml:space="preserve">
+    <value>Fuel</value>
+  </data>
+  <data name="Material_2" xml:space="preserve">
+    <value>Bull</value>
+  </data>
+  <data name="Material_3" xml:space="preserve">
+    <value>Steel</value>
+  </data>
+  <data name="Material_4" xml:space="preserve">
+    <value>Bauxite</value>
+  </data>
+  <data name="Material_5" xml:space="preserve">
+    <value>Instant Build</value>
+  </data>
+  <data name="Material_6" xml:space="preserve">
+    <value>Instant Repair</value>
+  </data>
+  <data name="Material_7" xml:space="preserve">
+    <value>Development</value>
+  </data>
+  <data name="Material_8" xml:space="preserve">
+    <value>Improvement</value>
+  </data>
+  <data name="Mute" xml:space="preserve">
+    <value>Mute</value>
+  </data>
+  <data name="Notification" xml:space="preserve">
+    <value>Notification</value>
+  </data>
+  <data name="Notification_Build_Text" xml:space="preserve">
+    <value>Construction of {1} in Dock {0} has been completed.</value>
+  </data>
+  <data name="Notification_Build_Title" xml:space="preserve">
+    <value>Construction Completed</value>
+  </data>
+  <data name="Notification_Condition_Text" xml:space="preserve">
+    <value>All ships in 「{0}」 have fully recovered from fatigue.</value>
+  </data>
+  <data name="Notification_Condition_Title" xml:space="preserve">
+    <value>Fatigue Recovery Completed</value>
+  </data>
+  <data name="Notification_Expedition_Text" xml:space="preserve">
+    <value>「{0}」 has returned from an expedition.
+Expedition {1} - {2}</value>
+  </data>
+  <data name="Notification_Expedition_Title" xml:space="preserve">
+    <value>Expedition Completed</value>
+  </data>
+  <data name="Notification_HeavyDamage_Text" xml:space="preserve">
+    <value>Ship heavily damaged:</value>
+  </data>
+  <data name="Notification_HeavyDamage_Title" xml:space="preserve">
+    <value>Heavy Damage Warning</value>
+  </data>
+  <data name="Notification_Repair_Text" xml:space="preserve">
+    <value>Repairs on {1} in Dock {0} have been completed.</value>
+  </data>
+  <data name="Notification_Repair_Title" xml:space="preserve">
+    <value>Repairs Completed</value>
+  </data>
+  <data name="Notification_ToolTip_Win10" xml:space="preserve">
+    <value>Windows 10 forces to use toast notifications. To enable the BallonTip, edit registry.</value>
+  </data>
+  <data name="Notification_Type" xml:space="preserve">
+    <value>Notification Type</value>
+  </data>
+  <data name="Option" xml:space="preserve">
+    <value>Option</value>
+  </data>
+  <data name="Plugin" xml:space="preserve">
+    <value>Plugin</value>
+  </data>
+  <data name="Predict_Disable" xml:space="preserve">
+    <value>Disable</value>
+  </data>
+  <data name="Predict_Enable" xml:space="preserve">
+    <value>Enable</value>
+  </data>
+  <data name="Proxy" xml:space="preserve">
+    <value>Proxy</value>
+  </data>
+  <data name="Proxy_Address" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="Proxy_Port" xml:space="preserve">
+    <value>Port</value>
+  </data>
+  <data name="Proxy_UseHTTPS" xml:space="preserve">
+    <value>Use another proxy for HTTPS</value>
+  </data>
+  <data name="Proxy_UseProxy" xml:space="preserve">
+    <value>Use proxy</value>
+  </data>
+  <data name="Quest_Period_Other" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="Quest_Peroid_Daily" xml:space="preserve">
+    <value>Daily</value>
+  </data>
+  <data name="Quest_Peroid_Monthly" xml:space="preserve">
+    <value>Monthly</value>
+  </data>
+  <data name="Quest_Peroid_Once" xml:space="preserve">
+    <value>Once</value>
+  </data>
+  <data name="Quest_Peroid_Weekly" xml:space="preserve">
+    <value>Weekly</value>
+  </data>
+  <data name="Quest_Type_Charge" xml:space="preserve">
+    <value>Repair&amp;Charge</value>
+  </data>
+  <data name="Quest_Type_Exercise" xml:space="preserve">
+    <value>Exercise</value>
+  </data>
+  <data name="Quest_Type_Expedition" xml:space="preserve">
+    <value>Expedition</value>
+  </data>
+  <data name="Quest_Type_Organization" xml:space="preserve">
+    <value>Organization</value>
+  </data>
+  <data name="Quest_Type_Other" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="Quest_Type_Powerup" xml:space="preserve">
+    <value>Powerup</value>
+  </data>
+  <data name="Quest_Type_Shipyard" xml:space="preserve">
+    <value>Shipyard</value>
+  </data>
+  <data name="Quest_Type_Sortie" xml:space="preserve">
+    <value>Sortie</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="Screenshot" xml:space="preserve">
+    <value>Screenshot</value>
+  </data>
+  <data name="Screenshot_Fail" xml:space="preserve">
+    <value>Screenshot save failed: </value>
+  </data>
+  <data name="Screenshot_Success" xml:space="preserve">
+    <value>Screenshot saved: </value>
+  </data>
+  <data name="SelectAll" xml:space="preserve">
+    <value>Select All</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="Settings_Actions" xml:space="preserve">
+    <value>Action</value>
+  </data>
+  <data name="Settings_ConfigFile" xml:space="preserve">
+    <value>Config File</value>
+  </data>
+  <data name="Settings_FolderOpen" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="Settings_FolderSelect" xml:space="preserve">
+    <value>Select</value>
+  </data>
+  <data name="Settings_Font_Mix" xml:space="preserve">
+    <value>Font mixing...</value>
+  </data>
+  <data name="Settings_Layout" xml:space="preserve">
+    <value>Layout</value>
+  </data>
+  <data name="Settings_Load" xml:space="preserve">
+    <value>Load</value>
+  </data>
+  <data name="Settings_LoadFrom" xml:space="preserve">
+    <value>Load from...</value>
+  </data>
+  <data name="Settings_LoS" xml:space="preserve">
+    <value>Light of Sight</value>
+  </data>
+  <data name="Settings_LoS_Formula14Q3" xml:space="preserve">
+    <value>Formula 2-5 Old</value>
+  </data>
+  <data name="Settings_LoS_Formula14Q4" xml:space="preserve">
+    <value>Formula 2-5 Autumn</value>
+  </data>
+  <data name="Settings_LoS_Formula16Q1" xml:space="preserve">
+    <value>Formula "33" (2016Q1)</value>
+  </data>
+  <data name="Settings_LoS_SimpleSum" xml:space="preserve">
+    <value>Simple Sum</value>
+  </data>
+  <data name="Settings_MainBackground_BlurRadius" xml:space="preserve">
+    <value>Blur radius</value>
+  </data>
+  <data name="Settings_MainBackground_Enable" xml:space="preserve">
+    <value>Show a background image on main window</value>
+  </data>
+  <data name="Settings_MainBackground_Filename" xml:space="preserve">
+    <value>Image file name</value>
+  </data>
+  <data name="Settings_MainBackground_Opacity" xml:space="preserve">
+    <value>Opacity</value>
+  </data>
+  <data name="Settings_Network" xml:space="preserve">
+    <value>Network</value>
+  </data>
+  <data name="Settings_NotifyShortingTime" xml:space="preserve">
+    <value>Notify shorting time(s): </value>
+  </data>
+  <data name="Settings_NotifyWhenBuild" xml:space="preserve">
+    <value>Notify when building complete</value>
+  </data>
+  <data name="Settings_NotifyWhenCondition" xml:space="preserve">
+    <value>Notify when condition recovery</value>
+  </data>
+  <data name="Settings_NotifyWhenExpedition" xml:space="preserve">
+    <value>Notify when expedition complete</value>
+  </data>
+  <data name="Settings_NotifyWhenRepair" xml:space="preserve">
+    <value>Notify when repairing complete</value>
+  </data>
+  <data name="Settings_Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Settings_SaveAs" xml:space="preserve">
+    <value>Save as...</value>
+  </data>
+  <data name="Settings_ScreenShotFolder" xml:space="preserve">
+    <value>Screenshot Folder: </value>
+  </data>
+  <data name="Settings_SystemStyle" xml:space="preserve">
+    <value>System Style</value>
+  </data>
+  <data name="Settings_Theme" xml:space="preserve">
+    <value>Theme</value>
+  </data>
+  <data name="Settings_Zoom" xml:space="preserve">
+    <value>Zoom</value>
+  </data>
+  <data name="Ship_AA" xml:space="preserve">
+    <value>AntiAir</value>
+  </data>
+  <data name="Ship_Armor" xml:space="preserve">
+    <value>Armor</value>
+  </data>
+  <data name="Ship_ASW" xml:space="preserve">
+    <value>ASW</value>
+  </data>
+  <data name="Ship_Class" xml:space="preserve">
+    <value>Class</value>
+  </data>
+  <data name="Ship_Cond" xml:space="preserve">
+    <value>Condition</value>
+  </data>
+  <data name="Ship_Equip" xml:space="preserve">
+    <value>Equipments</value>
+  </data>
+  <data name="Ship_Evasion" xml:space="preserve">
+    <value>Evasion</value>
+  </data>
+  <data name="Ship_Filter" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="Ship_Filter_Level_False" xml:space="preserve">
+    <value>Lv. 1</value>
+  </data>
+  <data name="Ship_Filter_Level_Title" xml:space="preserve">
+    <value>Level</value>
+  </data>
+  <data name="Ship_Filter_Level_True" xml:space="preserve">
+    <value>Lv. 2+</value>
+  </data>
+  <data name="Ship_Filter_Lock_False" xml:space="preserve">
+    <value>Not Locked</value>
+  </data>
+  <data name="Ship_Filter_Lock_Title" xml:space="preserve">
+    <value>Lock</value>
+  </data>
+  <data name="Ship_Filter_Lock_True" xml:space="preserve">
+    <value>Locked</value>
+  </data>
+  <data name="Ship_Filter_Mission_False" xml:space="preserve">
+    <value>Not In Expedition</value>
+  </data>
+  <data name="Ship_Filter_Mission_Title" xml:space="preserve">
+    <value>Mission</value>
+  </data>
+  <data name="Ship_Filter_Mission_True" xml:space="preserve">
+    <value>In Expedition</value>
+  </data>
+  <data name="Ship_Filter_Powerup_False" xml:space="preserve">
+    <value>Powerup InComplete</value>
+  </data>
+  <data name="Ship_Filter_Powerup_Title" xml:space="preserve">
+    <value>Powerup</value>
+  </data>
+  <data name="Ship_Filter_Powerup_True" xml:space="preserve">
+    <value>Powerup Complete</value>
+  </data>
+  <data name="Ship_Filter_Remodel_False" xml:space="preserve">
+    <value>Remodel InComplete</value>
+  </data>
+  <data name="Ship_Filter_Remodel_Title" xml:space="preserve">
+    <value>Remodel</value>
+  </data>
+  <data name="Ship_Filter_Remodel_True" xml:space="preserve">
+    <value>Remodel Complete</value>
+  </data>
+  <data name="Ship_Filter_Speed_False" xml:space="preserve">
+    <value>Low Speed</value>
+  </data>
+  <data name="Ship_Filter_Speed_Title" xml:space="preserve">
+    <value>Speed</value>
+  </data>
+  <data name="Ship_Filter_Speed_True" xml:space="preserve">
+    <value>High Speed</value>
+  </data>
+  <data name="Ship_Firepower" xml:space="preserve">
+    <value>Firepower</value>
+  </data>
+  <data name="Ship_Id" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="Ship_Level" xml:space="preserve">
+    <value>Level</value>
+  </data>
+  <data name="Ship_LoS" xml:space="preserve">
+    <value>LoS</value>
+  </data>
+  <data name="Ship_LowerCase" xml:space="preserve">
+    <value>ship</value>
+  </data>
+  <data name="Ship_Luck" xml:space="preserve">
+    <value>Luck</value>
+  </data>
+  <data name="Ship_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Ship_NextHP" xml:space="preserve">
+    <value>Next repair: </value>
+  </data>
+  <data name="Ship_PerHP" xml:space="preserve">
+    <value>Per HP: </value>
+  </data>
+  <data name="Ship_Preset01" xml:space="preserve">
+    <value>DD</value>
+  </data>
+  <data name="Ship_Preset02" xml:space="preserve">
+    <value>CL(T)</value>
+  </data>
+  <data name="Ship_Preset03" xml:space="preserve">
+    <value>CA(V)</value>
+  </data>
+  <data name="Ship_Preset04" xml:space="preserve">
+    <value>Cruisers</value>
+  </data>
+  <data name="Ship_Preset05" xml:space="preserve">
+    <value>BB(V)</value>
+  </data>
+  <data name="Ship_Preset06" xml:space="preserve">
+    <value>Carriers</value>
+  </data>
+  <data name="Ship_Preset07" xml:space="preserve">
+    <value>CV(A)</value>
+  </data>
+  <data name="Ship_Preset08" xml:space="preserve">
+    <value>SS(V)</value>
+  </data>
+  <data name="Ship_Preset09" xml:space="preserve">
+    <value>Seaplaners</value>
+  </data>
+  <data name="Ship_Preset10" xml:space="preserve">
+    <value>Specials</value>
+  </data>
+  <data name="Ship_RepairTime" xml:space="preserve">
+    <value>Repair Time</value>
+  </data>
+  <data name="Ship_Sort" xml:space="preserve">
+    <value>Sort</value>
+  </data>
+  <data name="Ship_Sort_Ascend" xml:space="preserve">
+    <value>Ascending</value>
+  </data>
+  <data name="Ship_Sort_Descend" xml:space="preserve">
+    <value>Descending</value>
+  </data>
+  <data name="Ship_Sort_None" xml:space="preserve">
+    <value>(None)</value>
+  </data>
+  <data name="Ship_Torpedo" xml:space="preserve">
+    <value>Torpedo</value>
+  </data>
+  <data name="ShipCount" xml:space="preserve">
+    <value>Ships: </value>
+  </data>
+  <data name="Statistics" xml:space="preserve">
+    <value>Statistics</value>
+  </data>
+  <data name="Status_Exception" xml:space="preserve">
+    <value>Exception happens in program</value>
+  </data>
+  <data name="Status_GetResponse" xml:space="preserve">
+    <value>Get response: {0}</value>
+  </data>
+  <data name="Status_Ready" xml:space="preserve">
+    <value>Ready.</value>
+  </data>
+  <data name="Stop" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="Success" xml:space="preserve">
+    <value>Success</value>
+  </data>
+  <data name="Theme" xml:space="preserve">
+    <value>Theme</value>
+  </data>
+  <data name="TimeRange" xml:space="preserve">
+    <value>Time Range</value>
+  </data>
+  <data name="TimeRange_All" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="TimeRange_Custom" xml:space="preserve">
+    <value>Specified</value>
+  </data>
+  <data name="TimeRange_Days3" xml:space="preserve">
+    <value>In 3 days</value>
+  </data>
+  <data name="TimeRange_Days7" xml:space="preserve">
+    <value>In 7 days</value>
+  </data>
+  <data name="TimeRange_Hours1" xml:space="preserve">
+    <value>In a hour</value>
+  </data>
+  <data name="TimeRange_Hours12" xml:space="preserve">
+    <value>In 12 hours</value>
+  </data>
+  <data name="TimeRange_Hours24" xml:space="preserve">
+    <value>In 24 hours</value>
+  </data>
+  <data name="TimeRange_Hours6" xml:space="preserve">
+    <value>In 6 hours</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="Update_AutoCheck" xml:space="preserve">
+    <value>Auto check for update</value>
+  </data>
+  <data name="Update_AutoDownload" xml:space="preserve">
+    <value>Auto download update</value>
+  </data>
+  <data name="Update_Command_CancelDownload" xml:space="preserve">
+    <value>Cancel download</value>
+  </data>
+  <data name="Update_Command_Check" xml:space="preserve">
+    <value>Check for update</value>
+  </data>
+  <data name="Update_Command_Download" xml:space="preserve">
+    <value>Download update</value>
+  </data>
+  <data name="Update_Command_Restart" xml:space="preserve">
+    <value>Restart now</value>
+  </data>
+  <data name="Update_Command_UpdateFile" xml:space="preserve">
+    <value>Apply update</value>
+  </data>
+  <data name="Update_Text_CancelDownload" xml:space="preserve">
+    <value>Downloading update</value>
+  </data>
+  <data name="Update_Text_Check" xml:space="preserve">
+    <value>No update.</value>
+  </data>
+  <data name="Update_Text_Download" xml:space="preserve">
+    <value>Update found:</value>
+  </data>
+  <data name="Update_Text_ReleaseTime" xml:space="preserve">
+    <value>Release time:</value>
+  </data>
+  <data name="Update_Text_Restart" xml:space="preserve">
+    <value>Waiting for restart.</value>
+  </data>
+  <data name="Update_Text_UpdateFile" xml:space="preserve">
+    <value>Update downloaded.</value>
+  </data>
+  <data name="Update_UsingProxy" xml:space="preserve">
+    <value>Update using proxy</value>
+  </data>
+  <data name="ViewTitle_AdmiralView" xml:space="preserve">
+    <value>Admiral</value>
+  </data>
+  <data name="ViewTitle_BattleDetail" xml:space="preserve">
+    <value>Battle Detail</value>
+  </data>
+  <data name="ViewTitle_BattleView" xml:space="preserve">
+    <value>Battle</value>
+  </data>
+  <data name="ViewTitle_BuildingView" xml:space="preserve">
+    <value>Building</value>
+  </data>
+  <data name="ViewTitle_CompassView" xml:space="preserve">
+    <value>Compass</value>
+  </data>
+  <data name="ViewTitle_DevelopView" xml:space="preserve">
+    <value>Development</value>
+  </data>
+  <data name="ViewTitle_EquipmentCatalog" xml:space="preserve">
+    <value>All Equipments</value>
+  </data>
+  <data name="ViewTitle_FleetView" xml:space="preserve">
+    <value>Fleet</value>
+  </data>
+  <data name="ViewTitle_MapHPView" xml:space="preserve">
+    <value>Map HP</value>
+  </data>
+  <data name="ViewTitle_MissionView" xml:space="preserve">
+    <value>Expedition</value>
+  </data>
+  <data name="ViewTitle_QuestOverview" xml:space="preserve">
+    <value>Quest In Progress</value>
+  </data>
+  <data name="ViewTitle_RepairView" xml:space="preserve">
+    <value>Repairing</value>
+  </data>
+  <data name="ViewTitle_ShipCatalog" xml:space="preserve">
+    <value>All Ships</value>
+  </data>
+</root>

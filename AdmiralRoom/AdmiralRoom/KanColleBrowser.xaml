@@ -1,0 +1,128 @@
+﻿<UserControl x:Class="Huoyaoyuan.AdmiralRoom.KanColleBrowser"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:Huoyaoyuan.AdmiralRoom"
+             xmlns:ex="clr-namespace:Huoyaoyuan.AdmiralRoom.Views.Extensions"
+             xmlns:models="clr-namespace:Huoyaoyuan.AdmiralRoom.Models"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary Source="Icons/VectorIcons.xaml"/>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.Resources>
+            <Style TargetType="Button">
+                <Setter Property="Margin" Value="2"/>
+            </Style>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="24"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <!--<Button x:Name="btnBack" Grid.Column="0" ToolTip="{ex:Localizable Back}">
+            <Image Source="{DynamicResource IconBack}"/>
+        </Button>
+        <Button x:Name="btnFoward" Grid.Column="1" ToolTip="{ex:Localizable Forward}">
+            <Image Source="{DynamicResource IconForward}"/>
+        </Button>-->
+        <ToggleButton x:Name="btnGameUrl"
+                      Grid.Column="0"
+                      Margin="2"
+                      ToolTip="{ex:Localizable Browser_DefaultPage}">
+            <Image Source="{DynamicResource IconGameUrl}"/>
+        </ToggleButton>
+        <Popup IsOpen="{Binding IsChecked, ElementName=btnGameUrl, Mode=TwoWay}"
+               Placement="Bottom" PopupAnimation="Slide"
+               StaysOpen="False" AllowsTransparency="True"
+               PlacementTarget="{Binding ElementName=btnGameUrl, Mode=OneWay}">
+            <Border BorderBrush="Gray" BorderThickness="1" Padding="2">
+                <StackPanel Orientation="Vertical">
+                    <CheckBox IsChecked="{Binding OverrideGameUrlEnabled, Source={x:Static local:Config.Current}, Mode=TwoWay}" Content="{ex:Localizable Browser_DefaultPage_Override}"/>
+                    <TextBox Width="200" Text="{Binding OverrideGameUrl, Source={x:Static local:Config.Current}, Mode=TwoWay}" IsEnabled="{Binding OverrideGameUrlEnabled, Source={x:Static local:Config.Current}, Mode=OneWay}"/>
+                </StackPanel>
+            </Border>
+        </Popup>
+        <TextBox x:Name="txtAddress" Grid.Column="2" VerticalAlignment="Center">
+            <TextBox.InputBindings>
+                <KeyBinding Key="Return" Command="{Binding GotoUrlCommand, RelativeSource={RelativeSource AncestorType=local:KanColleBrowser}, Mode=OneTime}"/>
+            </TextBox.InputBindings>
+        </TextBox>
+        <Button x:Name="btnRefresh" Grid.Column="3" ToolTip="{ex:Localizable Refresh}">
+            <Image Source="{DynamicResource IconRefresh}"/>
+        </Button>
+        <Button x:Name="btnBackToGame" Grid.Column="4" ToolTip="{ex:Localizable BackToGame}">
+            <Image Source="{DynamicResource IconHome}"/>
+        </Button>
+        <Button x:Name="btnStop" Grid.Column="5" ToolTip="{ex:Localizable Stop}">
+            <Image Source="{DynamicResource IconStop}"/>
+        </Button>
+        <WebBrowser x:Name="WebBrowser" Grid.Row="1" Grid.ColumnSpan="10"/>
+        <ToggleButton Grid.Column="6"
+                      Margin="2"
+                      VerticalAlignment="Center"
+                      ToolTip="{ex:Localizable Browser_LockFlash}"
+                      IsChecked="{Binding IsFlashLocked, RelativeSource={RelativeSource AncestorType=local:KanColleBrowser}, Mode=TwoWay}">
+            <Image>
+                <Image.Style>
+                    <Style TargetType="{x:Type Image}">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsChecked, RelativeSource={RelativeSource AncestorType=ToggleButton}}" Value="True">
+                                <Setter Property="Source" Value="{DynamicResource IconFlashLock}"/>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding IsChecked, RelativeSource={RelativeSource AncestorType=ToggleButton}}" Value="False">
+                                <Setter Property="Source" Value="{DynamicResource IconFlashUnlock}"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Image.Style>
+            </Image>
+        </ToggleButton>
+        <ToggleButton Grid.Column="7"
+                      Margin="2"
+                      VerticalAlignment="Center"
+                      ToolTip="{ex:Localizable Mute}"
+                      IsEnabled="{Binding IsGameLoaded, Source={x:Static models:Status.Current}, Mode=OneWay}"
+                      IsChecked="{Binding Volume.IsMute, Source={x:Static models:Status.Current}, Mode=TwoWay}">
+            <Image>
+                <Image.Style>
+                    <Style TargetType="{x:Type Image}">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsChecked, RelativeSource={RelativeSource AncestorType=ToggleButton}}" Value="True">
+                                <Setter Property="Source" Value="{DynamicResource IconVolumeOff}"/>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding IsChecked, RelativeSource={RelativeSource AncestorType=ToggleButton}}" Value="False">
+                                <Setter Property="Source" Value="{DynamicResource IconVolumeOn}"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Image.Style>
+            </Image>
+        </ToggleButton>
+        <Button x:Name="btnScreenShot"
+                Grid.Column="8"
+                VerticalAlignment="Center"
+                ToolTip="{ex:Localizable Screenshot}">
+            <Image Source="{DynamicResource IconScreenshot}"/>
+        </Button>
+        <Button x:Name="btnCleanCache"
+                Grid.Column="9"
+                VerticalAlignment="Center"
+                ToolTip="{ex:Localizable CleanCache}">
+            <Image Source="{DynamicResource IconCleanCache}"/>
+        </Button>
+    </Grid>
+</UserControl>

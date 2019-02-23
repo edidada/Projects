@@ -1,0 +1,4 @@
+﻿  c2mysql.cpp
+d:\visual studio 2015\projects\c2mysql_demo\c2mysql_demo\c2mysql.cpp(105): warning C4267: “参数”: 从“size_t”转换到“unsigned int”，可能丢失数据
+  C2MySQL_Demo.vcxproj -> D:\visual studio 2015\Projects\C2MySQL_Demo\x64\Debug\C2MySQL_Demo.exe
+  C2MySQL_Demo.vcxproj -> D:\visual studio 2015\Projects\C2MySQL_Demo\x64\Debug\C2MySQL_Demo.pdb (Full PDB)
