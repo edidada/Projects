@@ -1,5 +1,6 @@
 /flamingo/
 /flamingoclient/
+/testlist/
 !.mvn/wrapper/maven-wrapper.jar
 
 ### STS ###
