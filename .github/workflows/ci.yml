@@ -26,39 +26,48 @@ jobs:
 
       - name: Restore and build all solutions
         shell: pwsh
+        env:
+          CI: "true"
         run: |
           $ErrorActionPreference = 'Continue'
 
-          # Find every .sln, but skip the Visual Studio cache folder.
+          # Provide .NET Framework reference assemblies (4.5.2 / 4.6 / 4.7.x / 4.8) so the
+          # legacy C# projects compile on the runner without the targeting packs installed.
+          nuget install Microsoft.NETFramework.ReferenceAssemblies -Version 1.0.3 -ExcludeVersion -OutputDirectory .ci-ref 2>&1 | Out-Null
+          $refTargets = Resolve-Path ".ci-ref/Microsoft.NETFramework.ReferenceAssemblies/build/Microsoft.NETFramework.ReferenceAssemblies.targets"
+
+          # Solutions that require external native SDKs not available on the GitHub runner
+          # (OpenCV, Qt, MySQL C++ connector). They cannot build in CI, so they are skipped.
+          $excluded = @('OpenCVTest', 'TestOpenCV', 'QtGuiApplication1', 'C2MySQL_Demo')
+
           $solutions = Get-ChildItem -Recurse -Filter *.sln |
             Where-Object { $_.FullName -notmatch '\\\.vs\\' }
 
           $total = $solutions.Count
           $pass  = 0
           $fail  = 0
+          $skip  = 0
           $rows  = @()
 
           foreach ($sln in $solutions) {
+            if ($excluded -contains $sln.BaseName) {
+              $rows += "| $($sln.Name) | :fast_forward: SKIPPED (external SDK) |"
+              $skip++
+              continue
+            }
             Write-Host "::group::Build $($sln.Name)"
-            Write-Host "Path: $($sln.FullName)"
-
-            # Best-effort NuGet restore (harmless for solutions without packages).
             nuget restore "$($sln.FullName)" -NonInteractive 2>&1 | Out-Null
-
             & msbuild "$($sln.FullName)" `
               /nologo `
               /verbosity:minimal `
-              /p:Configuration=Release `
-              /p:Platform="Any CPU"
-
+              /p:PlatformToolset=v143 `
+              /p:CustomBeforeMicrosoftCommonTargets="$refTargets"
             if ($LASTEXITCODE -eq 0) {
               $rows += "| $($sln.Name) | :white_check_mark: PASS |"
               $pass++
-              Write-Host "=> PASS"
             } else {
               $rows += "| $($sln.Name) | :x: FAIL |"
               $fail++
-              Write-Host "=> FAIL (exit $LASTEXITCODE)"
             }
             Write-Host "::endgroup::"
           }
@@ -66,8 +75,7 @@ jobs:
           $summary = @"
           # Build Report
 
-          Total solutions scanned: **$total**
-          Passed: **$pass**  |  Failed: **$fail**
+          Total: **$total**  Passed: **$pass**  Failed: **$fail**  Skipped: **$skip**
 
           | Solution | Result |
           | --- | --- |
@@ -77,8 +85,10 @@ jobs:
           $summary | Out-File -Append $env:GITHUB_STEP_SUMMARY
 
           Write-Host ""
-          Write-Host "Build report complete. Passed=$pass Failed=$fail"
+          Write-Host "Build report complete. Passed=$pass Failed=$fail Skipped=$skip"
 
-          # The workflow always completes successfully so the status stays green;
-          # individual build results are surfaced in the job summary above.
+          if ($fail -gt 0) {
+            Write-Error "One or more buildable solutions failed to build."
+            exit 1
+          }
           exit 0
