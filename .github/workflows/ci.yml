@@ -73,6 +73,7 @@ jobs:
                 $tf = $m.Matches[0].Groups[1].Value
                 if ($fwMap.ContainsKey($tf)) {
                   $fwPath = Join-Path '.ci-ref' ($fwMap[$tf])
+                  $fwPath = [System.IO.Path]::GetFullPath($fwPath)
                   Write-Host "Detected $tf -> FrameworkPathOverride=$fwPath"
                   $extra += "/p:FrameworkPathOverride=$fwPath"
                 }
@@ -84,6 +85,7 @@ jobs:
               /verbosity:minimal `
               /p:PlatformToolset=v143 `
               /p:WindowsTargetPlatformVersion=10.0 `
+              "/p:PreprocessorDefinitions=_SILENCE_TR1_NAMESPACE_DEPRECATION_WARNING;%(PreprocessorDefinitions)" `
               @extra
 
             if ($LASTEXITCODE -eq 0) {
