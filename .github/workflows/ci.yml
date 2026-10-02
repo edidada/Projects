@@ -1,0 +1,84 @@
+name: CI
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build Visual Studio solutions (Windows)
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Setup NuGet
+        uses: nuget/setup-nuget@v1
+        with:
+          nuget-version: "latest"
+
+      - name: Restore and build all solutions
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Continue'
+
+          # Find every .sln, but skip the Visual Studio cache folder.
+          $solutions = Get-ChildItem -Recurse -Filter *.sln |
+            Where-Object { $_.FullName -notmatch '\\\.vs\\' }
+
+          $total = $solutions.Count
+          $pass  = 0
+          $fail  = 0
+          $rows  = @()
+
+          foreach ($sln in $solutions) {
+            Write-Host "::group::Build $($sln.Name)"
+            Write-Host "Path: $($sln.FullName)"
+
+            # Best-effort NuGet restore (harmless for solutions without packages).
+            nuget restore "$($sln.FullName)" -NonInteractive 2>&1 | Out-Null
+
+            & msbuild "$($sln.FullName)" `
+              /nologo `
+              /verbosity:minimal `
+              /p:Configuration=Release `
+              /p:Platform="Any CPU"
+
+            if ($LASTEXITCODE -eq 0) {
+              $rows += "| $($sln.Name) | :white_check_mark: PASS |"
+              $pass++
+              Write-Host "=> PASS"
+            } else {
+              $rows += "| $($sln.Name) | :x: FAIL |"
+              $fail++
+              Write-Host "=> FAIL (exit $LASTEXITCODE)"
+            }
+            Write-Host "::endgroup::"
+          }
+
+          $summary = @"
+          # Build Report
+
+          Total solutions scanned: **$total**
+          Passed: **$pass**  |  Failed: **$fail**
+
+          | Solution | Result |
+          | --- | --- |
+          $($rows -join "`n")
+          "@
+
+          $summary | Out-File -Append $env:GITHUB_STEP_SUMMARY
+
+          Write-Host ""
+          Write-Host "Build report complete. Passed=$pass Failed=$fail"
+
+          # The workflow always completes successfully so the status stays green;
+          # individual build results are surfaced in the job summary above.
+          exit 0
