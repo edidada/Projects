@@ -31,23 +31,27 @@ jobs:
         run: |
           $ErrorActionPreference = 'Continue'
 
-          # Provide .NET Framework reference assemblies (4.5.2 / 4.6 / 4.7.x / 4.8) so the
-          # legacy C# projects compile on the runner without the targeting packs installed.
-          nuget install Microsoft.NETFramework.ReferenceAssemblies -Version 1.0.3 -ExcludeVersion -OutputDirectory .ci-ref 2>&1 | Out-Null
-          $refTargets = Resolve-Path ".ci-ref/Microsoft.NETFramework.ReferenceAssemblies/build/Microsoft.NETFramework.ReferenceAssemblies.targets"
+          # .NET Framework reference assemblies for the frameworks used by the C#
+          # projects (the runner has no 4.5.2 / 4.6 targeting packs installed).
+          nuget install Microsoft.NETFramework.ReferenceAssemblies.net452 -Version 1.0.3 -ExcludeVersion -OutputDirectory .ci-ref 2>&1 | Out-Null
+          nuget install Microsoft.NETFramework.ReferenceAssemblies.net46  -Version 1.0.3 -ExcludeVersion -OutputDirectory .ci-ref 2>&1 | Out-Null
 
-          # Solutions that require external native SDKs not available on the GitHub runner
-          # (OpenCV, Qt, MySQL C++ connector). They cannot build in CI, so they are skipped.
+          $fwMap = @{
+            'v4.5.2' = 'Microsoft.NETFramework.ReferenceAssemblies.net452/build/.NETFramework/v4.5.2'
+            'v4.6'   = 'Microsoft.NETFramework.ReferenceAssemblies.net46/build/.NETFramework/v4.6'
+          }
+
+          # Solutions requiring external native SDKs (OpenCV / Qt / MySQL) that the
+          # GitHub runner cannot provide; they cannot be built in CI, so skip them.
           $excluded = @('OpenCVTest', 'TestOpenCV', 'QtGuiApplication1', 'C2MySQL_Demo')
 
           $solutions = Get-ChildItem -Recurse -Filter *.sln |
             Where-Object { $_.FullName -notmatch '\\\.vs\\' }
 
-          $total = $solutions.Count
-          $pass  = 0
-          $fail  = 0
-          $skip  = 0
-          $rows  = @()
+          $pass = 0
+          $fail = 0
+          $skip = 0
+          $rows = @()
 
           foreach ($sln in $solutions) {
             if ($excluded -contains $sln.BaseName) {
@@ -56,12 +60,32 @@ jobs:
               continue
             }
             Write-Host "::group::Build $($sln.Name)"
+
             nuget restore "$($sln.FullName)" -NonInteractive 2>&1 | Out-Null
+
+            # For C# projects: point MSBuild at the NuGet reference assemblies so
+            # legacy .NET Framework projects compile without targeting packs.
+            $extra = @()
+            $csproj = Get-ChildItem -Path $sln.DirectoryName -Recurse -Filter *.csproj | Select-Object -First 1
+            if ($csproj) {
+              $m = Select-String -Path $csproj.FullName -Pattern '<TargetFrameworkVersion>([^<]+)</TargetFrameworkVersion>' | Select-Object -First 1
+              if ($m) {
+                $tf = $m.Matches[0].Groups[1].Value
+                if ($fwMap.ContainsKey($tf)) {
+                  $fwPath = Join-Path '.ci-ref' ($fwMap[$tf])
+                  Write-Host "Detected $tf -> FrameworkPathOverride=$fwPath"
+                  $extra += "/p:FrameworkPathOverride=$fwPath"
+                }
+              }
+            }
+
             & msbuild "$($sln.FullName)" `
               /nologo `
               /verbosity:minimal `
               /p:PlatformToolset=v143 `
-              /p:CustomBeforeMicrosoftCommonTargets="$refTargets"
+              /p:WindowsTargetPlatformVersion=10.0 `
+              @extra
+
             if ($LASTEXITCODE -eq 0) {
               $rows += "| $($sln.Name) | :white_check_mark: PASS |"
               $pass++
@@ -75,7 +99,7 @@ jobs:
           $summary = @"
           # Build Report
 
-          Total: **$total**  Passed: **$pass**  Failed: **$fail**  Skipped: **$skip**
+          Total: **$($solutions.Count)**  Passed: **$pass**  Failed: **$fail**  Skipped: **$skip**
 
           | Solution | Result |
           | --- | --- |
